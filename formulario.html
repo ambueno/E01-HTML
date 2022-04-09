@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Formulário de Cadastro</title>
+        <h1>Formulário de Cadastro</h1>
+        <style>
+            input {
+              margin: 5px;
+            }
+        </style>
+    </head>
+    <body>
+        <form>
+            <fieldset>
+                <legend><h3>Dados Pessoais</h3></legend>
+
+                <label for="code">Código:</label>
+                <input type="text" id="code" requiredminlength="3" maxlength="8"><br><br>
+
+                <label for="name">Nome:</label>
+                <input type="text" id="name" requiredminlength="2" maxlength="100"><br><br>
+
+                <label for="password">Senha:</label>
+                <input type="password" id="password" requiredminlength="8" maxlength="100"><br><br>
+
+                <label>Gênero:</label>
+                <select name="" id="Genero">
+                    <option value="male">Masculino</option>
+                    <option value="female">Feminino</option>
+                    <option value="non-binary">Não binário</option>
+                    <option value="agender">Agênero</option>
+                    <option value="cis-male">Homem cis</option>
+                    <option value="cis-female">Mulher cis</option>
+                    <option value="trans-man">Homem trans</option>
+                    <option value="trans-female">Mulher trans</option>
+                    <option value="jrtfv0">Feminista kpoper de cabelo rosa mediana</option>
+                    <option value="jrtfv1">Crente mediano</option>
+                    <option value="jrtfv2">Amante de C++</option>
+                    <option value="jrtfv3">Sigma Gym</option>
+                    <option value="jrtfv4">Giga chad</option>
+                    <option value="jrtfv5">Droga é o braia!</option>
+                    <option value="jrtfv6">É o Éric</option>
+                    <option value="jrtfv7">Entre 1.6 e 2 gramas de proteina por kilo</option>
+                    <option value="jrtfv8">Otário</option>
+                    <option value="jrtfv9">Hemafrodita</option>
+                    <option value="jrtfv10">Ciclador de deca</option>
+                    <option value="jrtfv11">XD</option>
+                    <option value="jrtfv12">Calvo</option>
+                    <option value="jrtfv13">Bandex??</option>
+                    <option value="jrtfv14">Female Detected Opinion Rejected</option>
+                    <option value="jrtfv15">Ancap</option>
+                    <option value="jrtfv16">Monarquista</option>
+                    <option value="jrtfv17">Procuro estágio</option>
+                    <option value="jrtfv18">Garoto(a) de programa</option>
+                </select><br><br>
+
+                <label for="age">Idade:</label>
+                <input type="text" id="age" requiredminlength="1" maxlength="3"><br><br>
+
+                <label for="card">Cartão de crédito:</label><br>
+                <select name="cartao" multiple>
+                    <option value="Mastercard">Mastercard</option>
+                    <option value="Visa">Visa</option>
+                    <option value="American_Express">American Express</option>
+                </select>
+            </fieldset>
+            <fieldset>
+                <legend><h3>Dados Profissionais</h3></legend>
+
+                <label for="job-id">Cargo:</label>
+                <input list="jobs" id="job-id" name="job-id"></input>
+                <datalist id="jobs">
+                    <option value="Analista Júnior">
+                    <option value="Analista Pleno">
+                    <option value="Anlista Sênior">
+                </datalist><br><br>
+
+                <label>Dados Pessoais:</label><br>
+
+                <div>
+                    <input type="checkbox" id="isSmoker" name="isSmoker">
+                    <label for="isSmoler">Fumante</label>
+                </div>
+
+                <div>
+                    <input type="checkbox" id="isPhysicallyActive" name="isPhysicallyActive">
+                    <label for="isPhysicallyActive">Pratica Exercícios Físicos</label>
+                </div>
+
+                <div>
+                    <input type="checkbox" id="isDrinker" name="isDrinker">
+                    <label for="isDrinker">Consome Bebida Álcoolica</label>
+                </div><br>
+
+                <label for="experience">Exeperiências Profissionais:</label><br>
+                <textarea id="experience" placeholder="Data inicio/Data fim/Empresa/Cargo"></textarea>
+ 
+            </fieldset>
+            <input type="reset" value="Limpar">
+            <input type="submit" value="Inserir" onclick="alert('Os dados foram inseridos com sucesso!')">
+        </form>
+    </body>
+</html>

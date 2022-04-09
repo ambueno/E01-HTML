@@ -1,0 +1,124 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <h1>Manual de Programação em C</h1>
+        <hr>
+        <h2>Sumário:</h2>
+        <h3><a href="#topico1">Variáveis e expressões matemáticas</a></h3>
+        <h3><a href="#topico2">Estruturas Condicionais</a></h3>
+        <h3><a href="#topico3">Estruturas de Repetição</a></h3>
+        <h3><a href="#topico4">Funções e métodos</a></h3>
+        <h3><a href="#topico5">Estruturas</a></h3>
+        <h3><a href="#topico6">Manipulação de Arquivos</a></h3>
+        <h3><a href="#topico7">Vetores e Matrizes</a></h3>
+        <h3><a href="#topico8">Como executar um programa em C</a></h3>
+        <hr>
+
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.4.0/styles/atom-one-dark.min.css">
+    </head>
+    <body>
+        <h2 id="topico1">Variáveis e expressões matemáticas</h2>
+        <section>
+            <h3><u>Conceitos fundamentais:</u></h3>
+            <ul>
+                <li>Uma variável é caracterizada por um local reservado na memória para armazenar um tipo de dado;</li>
+                <li>Toda variável deve ter um identificador, ou seja um nome;</li>
+                <li>Toda variável deve ter um <a href="#tipo_ref">tipo</a>;</li>
+                <li>Em C, todas as variáveis devem ser declaradas antes de serem usadas.</li>
+              </ul>
+        </section>
+
+        <section>
+            <h3 id="tipo_ref"><u>Tipos:</u></h3>
+            <p>Tipo de dado é um sistema utilizado para definir diversas propriedades básicas sobre o dado armazenado na memória. propriedades essas como tipo do dado, seu intervalo, bytes ocupados, como esses bytes serão interpretados, etc.</p>
+            <p>Em C, os tipos de dados podem ser agrupados em 3 grandes categorias:</p>
+            <ol>
+                <li><h3>Tipos primitivos</h3></li>
+                <p>A linguagem C suporta quatro tipos primitivos int, char, ponto-flutuante (float e double) e void.<br>
+                Tipos primitivos também são chamados de pré-definidos ou tipos de dados básicos.</p>
+                <p>O tamanho e a faixa de valores de um tipo de dado depende da máquina e pode variar de compilador para compilador.
+                    O C padrão requer apenas o minimo tamanho a ser preenchido por cada compilador para cada tipo de dado.<br>
+                    Por exemplo, o tamanho de int varia em diferentes compiladores, mas precisa ser no mínimo 2 bytes em todos os compiladores.</p>
+                <ul>
+                    <li><b>int:</b>
+                        O termo int é utilizado para definir um tipo numérico inteiro. O tamanho de um int é de 2 ou 4 bytes (depende do compilador) e a faixa de valores que pode armazenar varia de -32768 a 32767 ou -2147483648 a +2147483647.
+                    </li>
+                    <li><b>float:</b>
+                    Um valor real é definido pelo termo float ou double. Float caracteriza um número real de precisão simples. Seu tamanho é de 4 bytes e sua faixa de valores vai de 1.2E-38 a 3.4E+38, apresentando, portanto, uma precisão de até 6 casas decimais</li>
+                    <li><b>double:</b>
+                    O termo double caracteriza um número real de precisão dupla. O tamanho de um double é de 8 bytes e sua faixa de valores vai de 2.3E-308 a 1.7E+308, apresentando, portanto, uma precisão de até 15 casas decimais.</li>
+                    <li><b>char:</b>
+                        Todo valor de um único caracter em C é representado usando char. Contudo, na realidade são armazenados valores inteiros ao invés dos caracteres em si, de modo que o computador tem que mapear cada inteiro com o caracter correspondente usando um código numérico. O mais comum dentre os códigos numéricos é a convenção ASCII.<br>
+                        O tamanho de um char é um byte e a faixa de valores que pode armazenar vai de -128 a 127. </li>
+                    <li><b>void:</b>
+                        Enquanto tipo de dado, o termo void representa a ausência de valores ou operadores, sendo utilizado para representar nada, vazio. Ou seja, internamente nada é armazenado. <br>
+                        Além disso, também é frequentemente utilizado para representar ponteiros genéricos ou o tipo de retorno de uma função, nesse caso de uma função onde o valor de retorno é vazio.</li>
+                </ul>
+                <li><h3>Tipos derivados</h3></li>
+                <h3><i>Qualificadores de tipos de dados</i></h3>
+                <ul>
+                    <li><h4>Qualificadores de tamanho</h4></li>
+                    <ul>
+                        <li><b>short:</b></li>
+                        <li><b>long:</b></li>
+                    </ul>
+                    
+                    <li><h4>Qualificadores de sinal</h4></li>
+                    <ul>
+                        <li><b>signed:</b></li>
+                        <li><b>unsigned:</b></li>
+                    </ul>
+                </ul>
+                <li><h3>Tipos definidos pelo usuário (UDT)</h3></li>
+            </ol>
+        </section>
+
+        <section>
+            <h3><u>Exemplos:</u></h3>
+            
+        </section>
+
+        <section>
+            <h3><u>Expressões matemáticas:</u></h3>
+            
+        </section>
+
+        <section>
+            <h3><u>Exemplos:</u></h3>
+            
+        </section>
+
+        <hr>
+
+        <h2 id="topico2">Estruturas Condicionais</h2>
+
+        <hr>
+
+        <h2 id="topico3">Estruturas de Repetição</h2>
+
+        <hr>
+
+        <h2 id="topico4">Funções e métodos</h2>
+
+        <hr>
+
+        <h2 id="topico5">Estruturas</h2>
+
+        <hr>
+
+        <h2 id="topico6">Manipulação de Arquivos</h2>
+
+        <hr>
+
+        <h2 id="topico7">Vetores e Matrizes</h2>
+
+        <hr>
+
+        <h2 id="topico8">Como executar um programa em C</h2>
+
+        <hr>
+
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.4.0/highlight.min.js"></script>
+        <script>hljs.highlightAll();</script>
+    </body>
+</html>

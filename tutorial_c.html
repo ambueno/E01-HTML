@@ -52,36 +52,223 @@
                         <li><b>double:</b>
                         O termo double caracteriza um número real de precisão dupla. O tamanho de um double é de 8 bytes e sua faixa de valores vai de 2.3E-308 a 1.7E+308, apresentando, portanto, uma precisão de até 15 casas decimais.</li>
                         <li><b>char:</b>
-                            Todo valor de um único caracter em C é representado usando char. Contudo, na realidade são armazenados valores inteiros ao invés dos caracteres em si, de modo que o computador tem que mapear cada inteiro com o caracter correspondente usando um código numérico. O mais comum dentre os códigos numéricos é a convenção ASCII.<br>
+                            Todo valor de um único caracter em C é representado usando char. Contudo, na realidade são armazenados valores inteiros ao invés dos caracteres em si, de modo que o computador tem que mapear cada inteiro com o caracter correspondente usando um código numérico.<br>O mais comum dentre os códigos numéricos é a convenção ASCII.<br>
                             O tamanho de um char é um byte e a faixa de valores que pode armazenar vai de -128 a 127. </li>
                         <li><b>void:</b>
                             Enquanto tipo de dado, o termo void representa a ausência de valores ou operadores, sendo utilizado para representar nada, vazio. Ou seja, internamente nada é armazenado. <br>
                             Além disso, também é frequentemente utilizado para representar ponteiros genéricos ou o tipo de retorno de uma função, nesse caso de uma função onde o valor de retorno é vazio.</li>
                     </ul>
-                    <li><h3>Tipos derivados</h3></li>
                     <h3><i>Qualificadores de tipos de dados</i></h3>
+                    <p>Qualificadores são opcionalmente adcionados nos tipos primitivos de dados conforme necessário. Em síntese, alteram o comportamento e propriedades dos tipos de dados.<br>
+
+                        Existem três tipos de qualificadores de dados em C, tamanho, sinal e tipo.
+                        
+                        A sintaxe padrão de uso de um qualificador é:</p>
+                    
+                        <pre>
+                            <code>[qualificador-de-sinal] [qualificador-de-tamanho] &#60tipo-de-dado-primitivo&#62</code>
+                        </pre>
                     <ul>
                         <li><h4>Qualificadores de tamanho</h4></li>
+                        <p>Qualificadores de tamanho são utilizados para alterar o tamanho do tipo de dado primitivo.  C dá suporte aos tipos short, long e long long.<br>
+                            Geralmente, qualificadores de tamanho são utilizados com o tipo int. Contudo, o tipo double também suporta o qualificador long.<br>
+                            São eles:</p>
                         <ul>
-                            <li><b>short:</b></li>
-                            <li><b>long:</b></li>
+                            <li><b>short:</b> Um short ocupa pelo menos 2 bytes e deve ser menor ou igual a um int.</li>
+                            <li><b>long:</b> Um long ocupa pelo menos 4 bytes e deve ser maior ou igual a um int.<br> Ou quando sendo aplicado a um double sua precisão deve ser maior ou igual a de um double sem qualificador, definindo um ponto-flutuante de dupla precisão com um mínimo de 12 bytes.</li>
+                            <li><b>long long:</b> Long long é suportado pelo compilador de C GCC, ocupa pelo menos 8 bytes e deve ser maior ou igual a um long.</li>
                         </ul>
                         
                         <li><h4>Qualificadores de sinal</h4></li>
+                        <p>Qualificadores de sinal são utilizados para especificar a natureza de tipo, isto é, se a variável pode ter valores negativos ou não.<br>
+                            Podem ser utilizados com inteiros (int) ou com caracteres (char). C suporta dois qualificadores de sinal, signed (com sinal) and unsigned (sem sinal).<br>
+                            Signed especifica uma variável que pode conter tanto valores positivos, quanto negativos. Já unsigned especifica uma variável que só pode contar valores positivos.</p>
                         <ul>
-                            <li><b>signed:</b></li>
-                            <li><b>unsigned:</b></li>
+                            <li><b>signed:</b> valor com sinal, isto é, a variável pode conter valores positivos ou negativos.</li>
+                            <li><b>unsigned:</b> valor sem sinal, isto é, a variável pode conter apenas valores negativos.</li>
+                        </ul>
+                        <li><h4>Qualificadores de tipo</h4></li>
+                        <ul>
+                            <li><b>const:</b></li>
+                            <li><b>restrict:</b></li>
+                            <li><b>volatile:</b></li>
                         </ul>
                     </ul>
-                    <li><h3>Tipos definidos pelo usuário (UDT)</h3></li>
+                    <p>Veja a tabela completa de tipos abaixo ou através <a href="https://en.wikipedia.org/wiki/C_data_types#Basic_types">link</a>.</p>
+                    <table border="1px">
+                        <thead>
+                            <tr>
+                                <th>Tipo de dado</th>
+                                <th>Tamanho</th>
+                                <th>Faixa de valores</th>
+                                <th>Descrição</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td><code>char</code></td>
+                                <td rowspan="2">1 byte</td>
+                                <td rowspan="2">-128 a 127</td>
+                                <td rowspan="2">Um caracter</td>
+                            </tr>
+                            <tr>
+                                <td><code>signed char</code></td>
+                            </tr>
+                            <tr>
+                                <td><code>unsigned char</code></td>
+                                <td>1 byte</td>
+                                <td>0 a 255</td>
+                                <td>Um caracter</td>
+                            </tr>
+                            <tr>
+                                <td><code>short</code></td>
+                                <td rowspan="3">2 bytes</td>
+                                <td rowspan="3">−32,767 a 32,767</td>
+                                <td rowspan="3">Inteiro short com sinal com um mínimo de 2 bytes</td>
+                            </tr>
+                            <tr>
+                                <td><code>signed short</code></td>
+                            </tr>
+                            <tr>
+                                <td><code>signed short int</code></td>
+                            </tr>
+                            <tr>
+                                <td><code>unsigned short</code></td>
+                                <td rowspan="2">2 bytes</td>
+                                <td rowspan="2">0 a 65,535</td>
+                                <td rowspan="2">Inteiro short sem sinal com um mínimo de 2 bytes</td>
+                            </tr>
+                            <tr>
+                                <td><code>unsigned short int</code></td>
+                            </tr>
+                            <tr>
+                                <td><code>int</code></td>
+                                <td rowspan="2">2 ou 4 bytes</td>
+                                <td rowspan="2">-32,768 a 32,767 ou -2,147,483,648 a 2,147,483,647</td>
+                                <td rowspan="2">Um inteiro (positivo ou negativo)</td>
+                            </tr>
+                            <tr>
+                                <td><code>signed int</code></td>
+                            </tr>
+                            <tr>
+                                <td><code>unsigned int</code></td>
+                                <td>2 ou 4 bytes</td>
+                                <td>0 a 65,535 ou 0 a 4,294,967,295</td>
+                                <td>Um inteiro sem sinal (positivo)</td>
+                            </tr>
+                            <tr>
+                                <td><code>long</code></td>
+                                <td rowspan="3">4 bytes</td>
+                                <td rowspan="3">-2,147,483,648 a 2,147,483,647</td>
+                                <td rowspan="3">Inteiro long com sinal com um mínimo de 4 bytes</td>
+                            </tr
+                            ><tr>
+                                <td><code>signed long</code></td>
+                            </tr>
+                            <tr>
+                                <td><code>signed long int</code></td>
+                            </tr>
+                            <tr>
+                                <td><code>unsigned long</code></td>
+                                <td rowspan="2">4 bytes</td><td rowspan="2">0 a 4,294,967,295</td>
+                                <td rowspan="2">Inteiro long sem sinal com um mínimo de 4 bytes</td>
+                            </tr>
+                            <tr>
+                                <td><code>unsigned long int</code></td>
+                            </tr>
+                            <tr>
+                                <td><code>long long</code></td>
+                                <td rowspan="4">8 bytes</td>
+                                <td rowspan="4">-9,223,372,036,854,775,808 a 9,223,372,036,854,775,807</td>
+                                <td rowspan="4">Inteiro com o dobro da capacidade de um long</td>
+                            </tr>
+                            <tr>
+                                <td><code>long long int</code></td>
+                            </tr><tr><td><code>signed long long</code></td>
+                            </tr><tr><td><code>signed long long int</code></td>
+                            </tr>
+                            <tr>
+                                <td><code>unsigned long long</code></td>
+                                <td rowspan="2">8 bytes</td>
+                                <td rowspan="2">0 a 18,446,744,073,709,551,615</td>
+                                <td rowspan="2">Inteiro sem sinal com o dobro da capacidade de um long</td>
+                            </tr>
+                            <tr>
+                                <td><code>unsigned long long int</code></td>
+                            </tr>
+                            <tr>
+                                <td><code>float</code></td>
+                                <td>4 bytes</td>
+                                <td>1.2E-38 a 3.4E+38</td>
+                                <td>Ponto-flutuante com precisão única</td>
+                            </tr>
+                            <tr>
+                                <td><code>double</code></td>
+                                <td>8 bytes</td>
+                                <td>2.3E-308 a 1.7E+308</td>
+                                <td>Ponto-flutuante com precisão dupla</td>
+                            </tr>
+                            <tr>
+                                <td><code>long double</code></td>
+                                <td>12 bytes</td>
+                                <td>3.4E-4932 a 1.1E+4932</td>
+                                <td>Ponto-flutuante com no mínimo precisão dupla</td>
+                            </tr>
+                        </tbody>
+                    </table>
+
+                        <li><h3>Tipos derivados</h3></li>
+                        <ul>
+                            <li><b>Função:</b></li>
+                            <li><b>Array:</b></li>
+                            <li><b>Ponteiro:</b></li>
+                        </ul>
+                        <li><h3>Tipos definidos pelo usuário (UDT):</h3></li>
+                        <ul>
+                            <li><b>Struct:</b></li>
+                            <li><b>Union:</b></li>
+                            <li><b>Enum:</b></li>
+                            <li><b>Typedef:</b></li>
+                        </ul>
+                        
                 </ol>
             </section>
     
             <section>
                 <h3><u>Exemplos:</u></h3>
+                <pre>
+                    <code>
+                        /*TIPOS PRIMITIVOS*/
+                        // variável do tipo char
+                        char letra = 'A';
+                        // variável do tipo int
+                        int idade = 21;
+                        // variável do tipo float
+                        float porcentagem_acertos = 95.67;
+                        // variável do tipo float
+                        double velocidade_da_luz = 2.998e+8;
+
+                        // variável do tipo const float 
+                        const float PI = 3.14159265359f
+                        // variável do tipo const int 
+                        const int inteiro_constante = 1;
+                        // variável do tipo volatile int
+                        int volatile inteiro_volatil;   
+
+                        /*TIPOS DERIVADOS*/
+
+                        /*TIPOS DEFINIDOS PELO USUÁRIO*/
+                    </code>
+                </pre>
                 
             </section>
-    
+
+            <section>
+                <h3><u>Boas práticas:</u></h3>
+            </section>
+
+            <h3 style="color: red;">to be continued...</h3>
+
             <section>
                 <h3><u>Expressões matemáticas:</u></h3>
                 
@@ -89,11 +276,15 @@
     
             <section>
                 <h3><u>Exemplos:</u></h3>
+                <pre>
+                    <code>
+                        
+                    </code>
+                </pre>
                 
             </section>
-    
             <hr>
-        </div>>
+        </div>
 
         <div>
             <h2 id="topico2">Estruturas Condicionais</h2>

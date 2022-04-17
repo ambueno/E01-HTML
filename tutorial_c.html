@@ -91,9 +91,13 @@
                         </ul>
                         <li><h4>Qualificadores de tipo</h4></li>
                         <ul>
-                            <li><b>const:</b></li>
-                            <li><b>restrict:</b></li>
-                            <li><b>volatile:</b></li>
+                            <li><b>const:</b>
+                                O modificador const determina que será declarada uma constante de um determinado tipo de dado que ocupa um espaço na memória RAM cujo valor não pode ser alterado em tempo de execução</li>
+                            <li><b>restrict:</b>
+                                O modificador restrict é específico para ponteiros, qualificando o ponteiro em si, não seu conteúdo.<br>Funciona como uma mecanismo de otimização informando ao compliador que nenhum outro ponteiro no escopo atual se refere ao mesmo endereço de memória.</li>
+                            <li><b>volatile:</b>
+                                o modificador volatile é utilizado para especificar não devem ser armazenado em cache os valores da variável automaticamente. Ou seja, em síntese, o modificador diz ao compilador para não armazenar em cache o valor desta variável.<br>Portanto, ele irá gerar código para obter o valor da variável volatile da memória principal toda vez que a encontrar.
+                            </li>
                         </ul>
                     </ul>
                     <p>Veja a tabela completa de tipos abaixo ou através <a href="https://en.wikipedia.org/wiki/C_data_types#Basic_types">link</a>.</p>
@@ -220,17 +224,25 @@
                     </table>
 
                         <li><h3>Tipos derivados</h3></li>
+                        <p>Tipos derivados de dados derivam de tipos primitivos ou tipos básicos da linguagem.</p>
                         <ul>
-                            <li><b>Função:</b></li>
-                            <li><b>Array:</b></li>
-                            <li><b>Ponteiro:</b></li>
+                            <li><b>Função:</b>
+                                Uma função é conjunto de comandos que realiza uma tarefa específica em um módulo dependente de código. Aprofundaremos nesse tópico no módulo <a href="#funcoes_metodos">Funções e métodos</a>.</li>
+                            <li><b>Array:</b>
+                                Array, ou vetor, é uma estrutura de dados indexada, que pode armazenar uma determinada quantidade de valores do mesmo tipo. Aprofundaremos nesse tópico no módulo <a href="#vetores_matrizes">Vetores e Matrizes</a>.</li>
+                            <li><b>Ponteiro:</b>
+                                Ponteiros, ou apontadores, são variáveis que armazenam o endereço de memória de outras variáveis. Dizemos que um ponteiro “aponta” para uma varíável quando contém o endereço da mesma. Aprofundaremos nesse tópico no módulo <a href="#ponteiros">Ponteiros</a>.</li>
                         </ul>
-                        <li><h3>Tipos definidos pelo usuário (UDT):</h3></li>
+                        <li><h3>Tipos definidos pelo usuário (UDT)</h3></li>
+                        <p>Os tipos de dados cujas propriedades fundamentais são definidas pelo usuário são chamados de tipos definidos pelo usuário</p>
                         <ul>
-                            <li><b>Struct:</b></li>
-                            <li><b>Union:</b></li>
-                            <li><b>Enum:</b></li>
-                            <li><b>Typedef:</b></li>
+                            <li><b>Struct: </b>
+                                Uma struct é uma variável especial que contém diversas outras variáveis normalmente de tipos diferentes. As variáveis internas contidas pela struct são denominadas membros da struct.<br> 
+                                Podemos dizer que as structs da linguagem C são o equivalente ao que se denomina registros em outras linguagens de programação.<br> Em síntese, é uma estrutura de dados composto que define fisicamente uma lista de variáveis agrupadas sob um nome em um bloco de memória.</li>
+                            <li><b>Union:</b>
+                                Uma união é um formato de dados que pode armazenar tipos diferentes mas apenas um tipo de cada vez. </li>
+                            <li><b>Enum:</b>
+                                Um enum define uma variável que vai receber apenas um conjunto restrito de valores. Na realidade, um enum é um conjunto de valores inteiros representados por identificadores.</li>
                         </ul>
                         
                 </ol>
@@ -250,16 +262,61 @@
                         // variável do tipo float
                         double velocidade_da_luz = 2.998e+8;
 
+                        // variável do tipo short int
+                        short inteiro_short = 12345; // mesmo que short int &#60nome-da-variavel&#62
+                        // variável do tipo long int
+                        long inteiro_long = 12345678;
+                        // variável do tipo long long int
+                        long long inteiro_long = 1234567891011;
+                        // variável do tipo long double
+                        long double ponto_flutuante_longo = 0.333333333333333333L;
+
+                        // inteiro de valor positivo com sinal
+                        signed int x = 23;
+                        // inteiro de valor negativo com sinal
+                        signed int y = -13;
+                        // inteiro de valor zero com sinal
+                        signed int z = 0;
+                        // inteiro de valor positivo sem sinal
+                        unsigned int w = 2;
+                        // inteiro de valor positivo sem sinal
+                        unsigned int z = 0;
+
+                        // char positivo 
+                        char caracter_x = 65;
+                        // char positivo 
+                        char caracter_y = 0;
+                        // char negativo 
+                        // pode causar problema em alguns compiladores
+                        char caracter_z = -56;
+                        // char com sinal
+                        signed char caracter_com_sinal_x = 12;
+                        // char com sinal
+                        signed char  caracter_com_sinal_y = 0;
+                        // char com sinal
+                        signed char  caracter_com_sinal_z = -12;
+                        // char sem sinal
+                        unsigned char caracter_sem_sinal_x = -85;
+                        unsigned char caracter_sem_sinal_y = 0;
+
                         // variável do tipo const float 
                         const float PI = 3.14159265359f
                         // variável do tipo const int 
                         const int inteiro_constante = 1;
                         // variável do tipo volatile int
-                        int volatile inteiro_volatil;   
+                        int volatile inteiro_volatil;
 
-                        /*TIPOS DERIVADOS*/
+                        // exemplificação do uso do modificador restrict
+                        void teste(int *restrict primeiro, int *restrict segundo, int *temporario){
+                            *primeiro += *temporario;
+                            *segundo += *temporario;
+                        }
 
-                        /*TIPOS DEFINIDOS PELO USUÁRIO*/
+                        int main(int argc, char *argv[]){
+                            int primeiroValor = 1, segundoValor = 2, terceiroValor = 3;
+                            teste(&primeiroValor, &segundoValor, &terceiroValor);
+                            return 0;
+                        }
                     </code>
                 </pre>
                 
@@ -267,6 +324,18 @@
 
             <section>
                 <h3><u>Boas práticas:</u></h3>
+                <h3>Boas práticas a serem seguidas ao nomear suas variáveis (segundo o Uncle Bob, autor do <a href="https://www.amazon.com.br/C%C3%B3digo-limpo-Robert-C-Martin/dp/8576082675">Código Limpo</a>):</h3>
+                <ul>
+                    <li><b>Use nomes que revelem seu prpósito;</b></li>
+                    <li><b>Evite informações erradas e/ou ambíguas;</b></li>
+                    <li><b>Faça distinções significativas;</b></li>
+                    <li><b>Use nomes pronunciáveis;</b></li>
+                    <li><b>Use nomes passíveis de busca;</b></li>
+                    <li><b>Substitua números mágicos por constantes nomeadas;</b></li>
+                    <li><b>Evite codificações;</b></li>
+                    <li><b>Não faça trocadilhos;</b></li>
+                    <li><b>Clareza é fundamental;</b></li>
+                </ul>
             </section>
 
             <h3 style="color: red;">to be continued...</h3>
